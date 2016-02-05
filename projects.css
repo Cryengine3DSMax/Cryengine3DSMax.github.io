@@ -1,0 +1,23 @@
+.head h1 {
+  font: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+.head h4 {
+  font: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+.head {
+  position: absolute;
+  width: 100vw;
+}
+
+.body {
+  background-color: #f2f2f2;
+}
+
+.top {
+  position: relative;
+  top: 175px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+    <!-- Angular-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100' rel='stylesheet' type='text/css'>
+
+    <!-- Google icons -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="projects.js"></script>
+
+    <link rel="stylesheet" href="projects.css">
+
+    <meta charset="utf-8">
+    <title>Project</title>
+  </head>
+  <body ng-app="angApp" ng-controller="ctrl" ng-init="project = {}">
+    <div class="head grey darken-4">
+      <div class="container white-text">
+        <h1 class="title">{{ project.title }}</h1>
+        <h4 class="subtitle">{{ project.subtitle }}</h4>
+      </div>
+    </div>
+    <div class="slider top">
+      <ul class="slides">
+        <li ng-repeat="x in imgList">
+          <img src="{{x}}"/>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
