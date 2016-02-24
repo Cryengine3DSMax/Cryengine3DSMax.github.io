@@ -101,7 +101,7 @@ $(document).ready(function() {
     $("#mandelbrot .name").stop().animate({opacity: "0", top: "0px"}, 500);
   });
   $("#mandelbrot").click(function() {
-    window.open("https://www.flickr.com/gp/139923301@N05/z6FjLg", '_blank');
+    window.open("https://github.com/rohittavare/MandlebrotExplorer", '_blank');
   });
   /*$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
