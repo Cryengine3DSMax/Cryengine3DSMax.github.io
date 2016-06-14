@@ -113,6 +113,16 @@ $(document).ready(function () {
   $("#savior").click(function() {
     window.open("http://devpost.com/software/savior-ospjwh", '_blank');
   });
+    
+  $("#ironman").mouseenter(function() {
+    $("#ironman .name").stop().animate({opacity: "1", top: "-10px"}, 500);
+  });
+  $("#ironman").mouseleave(function() {
+    $("#ironman .name").stop().animate({opacity: "0", top: "0px"}, 500);
+  });
+  $("#ironman").click(function() {
+    window.open("https://www.flickr.com/gp/139923301@N05/npgr7x", '_blank');
+  });
   /*$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
 
