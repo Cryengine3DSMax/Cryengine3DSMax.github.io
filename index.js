@@ -3,7 +3,7 @@ var animDone = true;
 var projects = ["#chrome", "#skies", "#chem", "#cap", "#motion", "#sum", "#dico", "#mandelbrot"];
 var i = 0;
 
-$(document).ready(function() {
+$(document).ready(function () {
   $(".button-collapse").sideNav();
   $('.parallax').parallax();
   scale();
@@ -102,6 +102,16 @@ $(document).ready(function() {
   });
   $("#mandelbrot").click(function() {
     window.open("https://github.com/rohittavare/MandlebrotExplorer", '_blank');
+  });
+    
+  $("#savior").mouseenter(function() {
+    $("#savior .name").stop().animate({opacity: "1", top: "-10px"}, 500);
+  });
+  $("#savior").mouseleave(function() {
+    $("#savior .name").stop().animate({opacity: "0", top: "0px"}, 500);
+  });
+  $("#savior").click(function() {
+    window.open("http://devpost.com/software/savior-ospjwh", '_blank');
   });
   /*$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();

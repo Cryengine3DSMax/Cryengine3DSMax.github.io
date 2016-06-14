@@ -277,6 +277,12 @@ body {
   background-size: auto 200px;
 }
 
+#savior {
+  background-image: url("savior.png");
+  background-position: center;
+  background-size: auto 200px;
+}
+
 .contact {
   background-image: url("sea2.jpg");
   background-position: center;
