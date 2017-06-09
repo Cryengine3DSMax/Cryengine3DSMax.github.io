@@ -1,0 +1,223 @@
+nav {
+  box-shadow: none;
+}
+
+#end {
+  margin-bottom: 20px;
+}
+
+.nav-transparent {
+  background-color: transparent;
+}
+
+.nav-white {
+  background-color: white;
+  color: black;
+}
+
+.nav-white a {
+  color: black;
+}
+
+.heading-img {
+  height: 40vh;
+  width: 100vw;
+}
+
+.heading-img img {
+  width: 100vw;
+}
+
+.home {
+  background-image: url("code.png");
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 93vh;
+  position: relative;
+}
+
+.cont {
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  opacity: 0;
+}
+
+.title-text {
+  font-size: 5em;
+  color: white;
+  width: 100vw;
+  text-align: center;
+  opacity: 0;
+  font-weight: 300;
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 0px;
+}
+
+.subtitle-text {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  width: 100vw;
+  text-align: center;
+  margin-bottom: 50px;
+  opacity: 0;
+}
+
+.body {
+
+}
+
+.button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.button-gray {
+  transition: background-color 0.5s ease;
+  background-color: white;
+  color: black
+}
+
+.button-gray:hover {
+  background-color: lightgray;
+}
+
+.button-white {
+  transition: background-color 0.5s ease;
+  background-color: white;
+  color: black
+}
+
+.button-white:hover {
+  background-color: rgba(255, 255, 255, 0.75);;
+}
+
+.centerize {
+  margin: auto;
+}
+
+#dive {
+  margin-top: 100px;
+  opacity: 0;
+}
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+.about {
+  min-height: 75vh;
+}
+
+.text-about {
+  opacity: 0;
+  top: 50px;
+  position: relative;
+}
+
+.screen-shots {
+  opacity: 0;
+  top: 50px;
+  position: relative;
+}
+
+.projects {
+  min-height: 100vh;
+}
+
+.skills {
+  min-height: 100vh;
+  color: black;
+  /*background-color: #182842;
+  background-image: url("https://source.unsplash.com/D_5iQVxKkPY/1200x700/");
+  background-position: center;
+  background-size: cover;*/
+  background-color: #eeeeee;
+}
+
+.prog {
+  opacity: 0;
+  top: 50px;
+  position: relative;
+}
+
+.skl-title {
+  opacity: 0;
+  top: 50px;
+  position: relative;
+}
+
+.des {
+  opacity: 0;
+  top: 50px;
+  position: relative;
+}
+
+.aca {
+  opacity: 0;
+  top: 50px;
+  position: relative;
+}
+
+.screen-shots {
+  margin-top: 5vh;
+}
+
+.screen {
+  width: 100%;
+}
+
+.underline {
+  border-bottom: 1px solid gray;
+}
+
+.proj-title {
+  opacity: 0;
+  top: 50px;
+  position: relative;
+}
+
+.project {
+  background-color: white;
+  height: 5vh;
+  opacity: 0;
+  top: 50px;
+  position: relative;
+}
+
+.clear {
+  height: auto;
+  position: absolute;
+  max-width: inherit;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.blur {
+  /*position: relative;
+  top: -31vh;*/
+  position: absolute;
+  opacity: 1;
+}
+
+.clear:hover {
+  opacity: 0;
+}
+
+.contact {
+  background-image: url("code.png");
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}

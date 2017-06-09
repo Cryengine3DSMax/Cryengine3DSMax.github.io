@@ -1,182 +1,95 @@
-var aspect = 1.15;
-var animDone = true;
-var projects = ["#chrome", "#skies", "#chem", "#cap", "#motion", "#sum", "#dico", "#mandelbrot"];
-var i = 0;
-
-$(document).ready(function () {
+$(document).ready(function() {
   $(".button-collapse").sideNav();
-  $('.parallax').parallax();
-  scale();
-  $(".nam").animate({opacity: "1"}, 3000);
-  $(".sub").animate({opacity: "1"}, 5000);
-  $(window).resize(function() {
-    scale();
-  });
+  $(".title-text").animate({"opacity" : '1.0'}, 4000);
+  $(".subtitle-text").animate({"opacity" : '1.0'}, 5000);
+  $(".logo").animate({"opacity" : '1.0'}, 3000);
+  scale()
+  window.addEventListener('resize', scale);
   var animations = [
-    {selector: "#webdev", offset: 200, callback: 'web()'},
-    {selector: "#gamedev", offset: 200, callback: 'game()'},
-    {selector: "#appdev", offset: 200, callback: 'code()'},
-    {selector: "#projects", offset: 400, callback: 'setInterval(pop, 100)'},
+    {selector: ".about", offset: 500, callback: aboutAppear},
+    {selector: ".skills", offset: 500, callback: skillsAppear},
+    {selector: ".projects", offset: 500, callback: projAppear}
   ];
-
   Materialize.scrollFire(animations);
-
-  $(window).scroll(function() {
-		var scroll = $(window).scrollTop();
-		if(scroll >= 20 && animDone) {
-      animDone = false;
-      $("nav").stop().animate({backgroundColor: "rgba(50, 50, 50, 1)"}, 700);
-		} else if(scroll < 20 && !animDone) {
-      animDone = true;
-      $("nav").stop().animate({backgroundColor: "transparent"}, 700);
-    }
-	});
-  $("#chrome").mouseenter(function() {
-    $("#chrome .name").stop().animate({opacity: "1", top: "-10px"}, 500);
-  });
-  $("#chrome").mouseleave(function() {
-    $("#chrome .name").stop().animate({opacity: "0", top: "0px"}, 500);
-  });
   $("#chrome").click(function() {
     window.open("https://www.flickr.com/gp/139923301@N05/D28L30", '_blank');
-  });
-  $("#skies").mouseenter(function() {
-    $("#skies .name").stop().animate({opacity: "1", top: "-10px"}, 500);
-  });
-  $("#skies").mouseleave(function() {
-    $("#skies .name").stop().animate({opacity: "0", top: "0px"}, 500);
-  });
-  $("#skies").click(function() {
-    window.open("https://www.flickr.com/gp/139923301@N05/G84u9b", '_blank');
-  });
-  $("#cap").mouseenter(function() {
-    $("#cap .name").stop().animate({opacity: "1", top: "-10px"}, 500);
-  });
-  $("#cap").mouseleave(function() {
-    $("#cap .name").stop().animate({opacity: "0", top: "0px"}, 500);
-  });
-  $("#cap").click(function() {
-    window.open("https://www.flickr.com/gp/139923301@N05/4Ybs8w", '_blank');
-  });
-  $("#chem").mouseenter(function() {
-    $("#chem .name").stop().animate({opacity: "1", top: "-10px"}, 500);
-  });
-  $("#chem").mouseleave(function() {
-    $("#chem .name").stop().animate({opacity: "0", top: "0px"}, 500);
-  });
-  $("#chem").click(function() {
-    window.open("https://www.flickr.com/gp/139923301@N05/Xs2c97", '_blank');
-  });
-  $("#motion").mouseenter(function() {
-    $("#motion .name").stop().animate({opacity: "1", top: "-10px"}, 500);
-  });
-  $("#motion").mouseleave(function() {
-    $("#motion .name").stop().animate({opacity: "0", top: "0px"}, 500);
-  });
-  $("#motion").click(function() {
-    window.open("https://www.flickr.com/gp/139923301@N05/62j32J", '_blank');
-  });
-  $("#sum").mouseenter(function() {
-    $("#sum .name").stop().animate({opacity: "1", top: "-10px"}, 500);
-  });
-  $("#sum").mouseleave(function() {
-    $("#sum .name").stop().animate({opacity: "0", top: "0px"}, 500);
   });
   $("#sum").click(function() {
     window.open("http://devpost.com/software/succinct", '_blank');
   });
-  $("#dico").mouseenter(function() {
-    $("#dico .name").stop().animate({opacity: "1", top: "-10px"}, 500);
-  });
-  $("#dico").mouseleave(function() {
-    $("#dico .name").stop().animate({opacity: "0", top: "0px"}, 500);
-  });
   $("#dico").click(function() {
     window.open("http://devpost.com/software/dico", '_blank');
-  });
-  $("#mandelbrot").mouseenter(function() {
-    $("#mandelbrot .name").stop().animate({opacity: "1", top: "-10px"}, 500);
-  });
-  $("#mandelbrot").mouseleave(function() {
-    $("#mandelbrot .name").stop().animate({opacity: "0", top: "0px"}, 500);
-  });
-  $("#mandelbrot").click(function() {
-    window.open("https://github.com/rohittavare/MandlebrotExplorer", '_blank');
-  });
-    
-  $("#savior").mouseenter(function() {
-    $("#savior .name").stop().animate({opacity: "1", top: "-10px"}, 500);
-  });
-  $("#savior").mouseleave(function() {
-    $("#savior .name").stop().animate({opacity: "0", top: "0px"}, 500);
   });
   $("#savior").click(function() {
     window.open("http://devpost.com/software/savior-ospjwh", '_blank');
   });
-    
-  $("#ironman").mouseenter(function() {
-    $("#ironman .name").stop().animate({opacity: "1", top: "-10px"}, 500);
-  });
-  $("#ironman").mouseleave(function() {
-    $("#ironman .name").stop().animate({opacity: "0", top: "0px"}, 500);
-  });
-  $("#ironman").click(function() {
+  $(".ironman").click(function() {
     window.open("https://www.flickr.com/gp/139923301@N05/npgr7x", '_blank');
   });
-  /*$('a[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
-
-	    var target = this.hash;
-	    var $target = $(target);
-
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});*/
+  $("#woxi").click(function() {
+    window.open("https://devpost.com/software/woxi", '_blank');
+  });
+  $("#astro").click(function() {
+    window.open("https://tinoastronomy.github.io/", '_blank');
+  });
+  /*$("#after").click(function() {
+    window.open("https://www.flickr.com/gp/139923301@N05/npgr7x", '_blank');
+  });*/
 });
 
-function scale() {
-  if($(window).width()/$(window).height() >= aspect) {
-    $(".header").css("background-size", "100vw auto");
-    $(".skill").css("width", "100vw");
-    $(".skill").css("height", "auto");
-  } else {
-    $(".header").css("background-size", "auto 100vh");
-    $(".skill").css("width", "auto");
-    $(".skill").css("height", "100vh");
-  }
-  if ($(window).width()/$(window).height() >= 1.5) {
-    $(".contact").css("background-size", "100vw auto");
-  } else {
-    $(".contact").css("background-size", "auto 100vh");
-  }
+function aboutAppear() {
+  $(".text-about").animate({"opacity" : '1.0', top : "0px"}, 1000);
+  setTimeout(function() {
+    $(".screen-shots").animate({"opacity" : '1.0', top : "0px"}, 1000);
+  }, 500);
 }
 
-function web() {
-  $(".web h1").animate({opacity: "1"}, 300);
-  Materialize.showStaggeredList("#webdev");
-  $(".web img").animate({opacity: "1"}, 500);
+function skillsAppear() {
+  $(".skl-title").animate({"opacity" : '1.0', top : "0px"}, 1000);
+  setTimeout(function() {
+    $(".prog").animate({"opacity" : '1.0', top : "0px"}, 1000);
+  }, 500);
+  setTimeout(function() {
+    $(".des").animate({"opacity" : '1.0', top : "0px"}, 1000);
+  }, 700);
+  setTimeout(function() {
+    $(".aca").animate({"opacity" : '1.0', top : "0px"}, 1000);
+  }, 900);
 }
 
-function game() {
-  $(".gdesign h1").animate({opacity: "1"}, 300);
-  Materialize.showStaggeredList("#gamedev");
-  $(".gdesign img").animate({opacity: "1"}, 500);
-}
-
-function code() {
-  $(".coding h1").animate({opacity: "1"}, 300);
-  Materialize.showStaggeredList("#appdev");
-  $(".coding img").animate({opacity: "1"}, 500);
-}
-
-function pop() {
-  if(i < projects.length) {
-    $(projects[i]).addClass("animated pulse");
+function projAppear() {
+  $(".proj-title").animate({"opacity" : '1.0', top : "0px"}, 1000);
+  var i = 0;
+  $(".project").each(function() {
+    elem = this;
+    fade(elem, i)
     i++;
-  } else {
-    clearInterval(pop);
+  });
+}
+
+function fade(elem, idx) {
+  setTimeout(function() {
+    $(elem).animate({"opacity" : '1.0', top : "0px"}, 1000);
+    console.log(elem);
+  }, 500 + 100 * idx);
+}
+
+function scale() {
+  w = $("#proj").width();
+  var cusid_ele = document.getElementsByClassName('clear');
+  for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];
+    item.width = w;
+  }
+  var cusid_ele = document.getElementsByClassName('project');
+  for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];
+    item.setAttribute("style","height:"+ (w+10) +"px");
+  }
+  var cusid_ele = document.getElementsByClassName('blur');
+  for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];
+    item.width = w;
+    item.height = w;
   }
 }
